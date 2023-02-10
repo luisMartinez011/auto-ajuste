@@ -53,7 +53,6 @@ class Terreno(Transporte):
                 print("El terreno es Lava")
                 print("       ")
         super().mostrar_transporte()
-
 async def action():
     while True:
         n = random.randint(0,4)
