@@ -1,9 +1,11 @@
 import random
 import asyncio
 
+#(Autoajuste) Esta clase representa el autoajuste
 class Transporte:
     def __init__(self, terreno):
-        self.terreno = terreno      
+        self.terreno = terreno
+
     def mostrar_transporte(self):
         match self.terreno:
             case 0:
@@ -26,10 +28,14 @@ class Transporte:
                 print("El modo de transporte es Pies anti-derrapamiento")
                 print("--------------------------------")
                 print("       ")
+
+
+#(Percepcion) Esta clase representa a las percecpiones
 class Terreno(Transporte):
     def __init__(self, terreno):
         super().__init__(terreno)
         self.terreno
+
     def mostrar_terreno(self):
         match self.terreno:
             case 0:
@@ -53,11 +59,13 @@ class Terreno(Transporte):
                 print("El terreno es Lava")
                 print("       ")
         super().mostrar_transporte()
+
+
 async def action():
     while True:
-        n = random.randint(0,4)
+        n = random.randint(0, 4)
         case1 = Terreno(n)
         case1.mostrar_terreno()
-        await asyncio.sleep(4) 
+        await asyncio.sleep(4)
 
 asyncio.run(action())
