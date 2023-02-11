@@ -24,7 +24,7 @@ public class Autoajuste {
             
             System.out.println("Que porcentaje de luz solar hay ? ");
             luzExterior = sc.nextInt();
-            luzLampara = 100 - (100 / luzExterior);
+            luzLampara = (int) (100 - (100 / (1 + Math.exp(0.1 * (luzExterior - 50)))));
 
             System.out.println("El porcentaje de luz de la lámpara es: " + luzLampara + "%");
 
